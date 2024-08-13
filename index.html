@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+		<script src="https://unpkg.com/unlazy@0.11.3/dist/unlazy.with-hashing.iife.js" defer init></script>
+		<script type="text/javascript">
+
+document.addEventListener("DOMContentLoaded", function () {
+    ScrollReveal().reveal('body img', {
+      distance: '50px',
+      origin: 'bottom',
+      opacity: 0,
+      duration: 1000,
+      easing: 'ease-in-out',
+      reset: true // Se você quiser que a animação se repita quando o elemento sair e entrar na viewport
+    });
+  });
+
+
+window.addEventListener('scroll', function() {
+    var nav = document.querySelector('nav');
+    if (window.scrollY > 50) { 
+      nav.classList.add('nav-centered');
+    } else {
+      nav.classList.remove('nav-centered');
+    }
+  });
+			window.tailwind.config = {
+				darkMode: ['class'],
+				theme: {
+					extend: {
+						colors: {
+							border: 'hsl(var(--border))',
+							input: 'hsl(var(--input))',
+							ring: 'hsl(var(--ring))',
+							background: 'hsl(var(--background))',
+							foreground: 'hsl(var(--foreground))',
+							primary: {
+								DEFAULT: 'hsl(var(--primary))',
+								foreground: 'hsl(var(--primary-foreground))'
+							},
+							secondary: {
+								DEFAULT: 'hsl(var(--secondary))',
+								foreground: 'hsl(var(--secondary-foreground))'
+							},
+							destructive: {
+								DEFAULT: 'hsl(var(--destructive))',
+								foreground: 'hsl(var(--destructive-foreground))'
+							},
+							muted: {
+								DEFAULT: 'hsl(var(--muted))',
+								foreground: 'hsl(var(--muted-foreground))'
+							},
+							accent: {
+								DEFAULT: 'hsl(var(--accent))',
+								foreground: 'hsl(var(--accent-foreground))'
+							},
+							popover: {
+								DEFAULT: 'hsl(var(--popover))',
+								foreground: 'hsl(var(--popover-foreground))'
+							},
+							card: {
+								DEFAULT: 'hsl(var(--card))',
+								foreground: 'hsl(var(--card-foreground))'
+							},
+						},
+					}
+				}
+			}
+
+            
+		</script>
+		<style type="text/tailwindcss">
+
+@import url("https://fonts.googleapis.com/css?family=IBM%20Plex%20Sans:500|IBM%20Plex%20Sans:300");
+
+* {
+    font-family: "IBM Plex Sans", sans-serif;
+}
+
+
+nav {
+    transition: transform 0.5s ease-in-out;
+  }
+  .nav-centered {
+    transform: translateX(50vw) translateY(85vh);
+  }
+			@layer base {
+				:root {
+                    --m: 3rem;
+					--background: 0 0% 100%;
+--foreground: 240 10% 3.9%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+
+--popover: 0 0% 100%;
+--popover-foreground: 240 10% 3.9%;
+--primary: 240 5.9% 10%;
+--primary-foreground: 0 0% 98%;
+--secondary: 240 4.8% 95.9%;
+--secondary-foreground: 240 5.9% 10%;
+--muted: 240 4.8% 95.9%;
+--muted-foreground: 240 3.8% 46.1%;
+--accent: 240 4.8% 95.9%;
+--accent-foreground: 240 5.9% 10%;
+--destructive: 0 84.2% 60.2%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 5.9% 90%;
+--input: 240 5.9% 90%;
+--ring: 240 5.9% 10%;
+--radius: 0.5rem;
+				}
+				.dark {
+					--background: 240 10% 3.9%;
+--foreground: 0 0% 98%;
+--card: 240 10% 3.9%;
+--card-foreground: 0 0% 98%;
+--popover: 240 10% 3.9%;
+--popover-foreground: 0 0% 98%;
+--primary: 0 0% 98%;
+--primary-foreground: 240 5.9% 10%;
+--secondary: 240 3.7% 15.9%;
+--secondary-foreground: 0 0% 98%;
+--muted: 240 3.7% 15.9%;
+--muted-foreground: 240 5% 64.9%;
+--accent: 240 3.7% 15.9%;
+--accent-foreground: 0 0% 98%;
+--destructive: 0 62.8% 30.6%;
+--destructive-foreground: 0 0% 98%;
+--border: 240 3.7% 15.9%;
+--input: 240 3.7% 15.9%;
+--ring: 240 4.9% 83.9%;
+				}
+			}
+
+            .search-panels {
+  --default-color: #ff7500;;
+  --color-text: #0F659C;
+  --color-active: #ff7500;;
+  --color-active-input: #ff7500;
+  --transition: 150ms cubic-bezier(0.4,0,0.2,1);
+  --width-input: 200px;
+}
+
+.search-group {
+  position: relative;
+}
+
+.input {
+  width: var(--width-input);
+  border: solid 1.5px var(--default-color);
+  border-radius: 80px;
+  background: none;
+  padding: 1rem;
+  padding-right: 3rem;
+  font-size: 1rem;
+  color: var(--color-active-input);
+  transition: border var(--transition);
+}
+
+.enter-label {
+  position: absolute;
+  left: 15px;
+  color: var(--default-color);
+  pointer-events: none;
+  transform: translateY(1rem);
+  transition: var(--transition);
+}
+
+.enter-label {
+  color: var(--default-color);
+  pointer-events: none;
+}
+
+.input:focus, input:valid {
+  outline: none;
+  border: 1.5px solid var(--color-active);
+}
+
+.input:focus ~ label, input:valid ~ label {
+  transform: translateY(-50%) scale(0.8);
+  background-color: var(--color-active);
+  border-radius: 20px;
+  padding: .2em .6em;
+  color: var(--color-text);
+}
+
+.btn-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: -1em;
+  right: 80%;
+  border-radius: 100%;
+  transition: 300ms cubic-bezier(0.4,0,0.2,1);
+  transition-delay: 100ms;
+  opacity: 0;
+}
+
+.input:focus ~ .btn-box, input:valid ~ .btn-box {
+  right: 10%;
+  opacity: 1;
+  transition-delay: 0s;
+  transition: var(--transition);
+}
+
+.input:not(:focus) ~ .btn-box, input:not(:valid) ~ .btn-box {
+  transition-property: right, opacity;
+  transition-delay: 300ms;
+}
+
+.input:focus ~ .btn-box:hover, input:valid ~ .btn-box:hover {
+  transform: scale(1.2);
+}
+
+.input:focus ~ .btn-box:hover:active, input:valid ~ .btn-box:hover:active {
+  transform: scale(1);
+}
+
+.btn-search {
+  position: relative;
+  cursor: pointer;
+  background-color: var(--color-active);
+  width: 2em;
+  height: 2em;
+  top: 2.5px;
+  border: none;
+  border-radius: 100%;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.btn-search:active {
+  transform: scale(1);
+}
+
+.btn-search svg {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  fill: var(--color-text);
+  width: 12px;
+  height: 12px;
+}
+
+#svg-circle {
+  fill: var(--color-text);
+  transition: var(--transition);
+}
+
+.input:focus ~ .btn-box:hover #svg-circle, input:valid ~ .btn-box:hover #svg-circle {
+  fill: transparent;
+}
+
+.btn-box-x {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 1em;
+  right: 7%;
+  opacity: 0;
+  transform: rotate(-90deg) scale(.1);
+  transition: var(--transition);
+}
+
+.input:focus ~ .btn-box-x, input:valid ~ .btn-box-x {
+  opacity: 1;
+  transform: rotate(0) scale(1);
+}
+
+.btn-cleare {
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  width: 2em;
+  height: 2em;
+  border: none;
+  border-radius: 100%;
+  padding: 0;
+  transition: var(--transition);
+}
+
+.btn-cleare svg {
+  width: 15px;
+  height: 15px;
+}
+
+#cleare-line {
+  fill: var(--default-color);
+}
+
+
+
+
+
+a {
+  position: relative;
+  padding: 10px 20px;
+  border-radius: 7px;
+  border: 1px solid #0F659C;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: transparent;
+  color: #ff7500;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+}
+
+a:hover {
+  background: #0F659C;
+  box-shadow: 0 0 30px 5px #0F659C;
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+a:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+a::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #f1aa6c;
+  box-shadow: 0 0 50px 30px #f1aa6c;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+a:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+
+.btn-box-x:hover #cleare-line {
+  fill: var(--color-active);
+}
+
+.btn {
+  width: 140px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: none;
+  position: relative;
+  background-color: transparent;
+  transition: .2s cubic-bezier(0.19, 1, 0.22, 1);
+  opacity: 0.6;
+}
+
+.btn::after {
+  content: '';
+  border-bottom: 3px double #ff7500;
+  width: 0;
+  height: 100%;
+  position: absolute;
+  margin-top: -5px;
+  top: 0;
+  left: 5px;
+  visibility: hidden;
+  opacity: 1;
+  transition: .2s linear;
+}
+
+.btn .icon {
+  transform: translateX(0%);
+  transition: .2s linear;
+  animation: attention 1.2s linear infinite;
+}
+
+.btn:hover::after {
+  visibility: visible;
+  opacity: 0.7;
+  width: 90%;
+}
+
+.btn:hover {
+  letter-spacing: 2px;
+  opacity: 1;
+}
+
+.btn:hover > .icon {
+  transform: translateX(30%);
+  animation: none;
+}
+
+@keyframes attention {
+  0% {
+    transform: translateX(0%);
+  }
+
+  50% {
+    transform: translateX(30%);
+  }
+
+  
+}
+
+
+      
+.textodobagui {
+    padding: 20px;
+    margin: 30px;
+    background: rgba( 15, 101, 156, 0.3 );
+    box-shadow:
+  0px 3px 2.2px rgba(0, 0, 0, 0.045),
+  0px 7.1px 5.3px rgba(0, 0, 0, 0.065),
+  0px 13.4px 10px rgba(0, 0, 0, 0.08),
+  0px 23.9px 17.9px rgba(0, 0, 0, 0.095),
+  0px 44.7px 33.4px rgba(0, 0, 0, 0.115),
+  0px 107px 80px rgba(0, 0, 0, 0.16)
+;
+    backdrop-filter: blur( 11px );
+    -webkit-backdrop-filter: blur( 11px );
+    border-radius: 10px;
+}
+
+.flex>img {
+padding: -20px;
+}
+
+h2#textofoda {
+    text-align:center;
+    padding: 10px;
+}
+
+.flex>a {
+    color:#FF7500;
+    font-weight: 900;
+    background: rgb(15,101,156);
+    background: radial-gradient(circle, rgba(15,101,156,1) 35%, rgba(35,95,134,1) 100%);
+    margin-left: 130px;
+    box-shadow:
+  0px 0px 2.2px rgba(0, 0, 0, 0.037),
+  0px 0px 5.3px rgba(0, 0, 0, 0.053),
+  0px 0px 10px rgba(0, 0, 0, 0.065),
+  0px 0px 17.9px rgba(0, 0, 0, 0.077),
+  0px 0px 33.4px rgba(0, 0, 0, 0.093),
+  0px 0px 80px rgba(0, 0, 0, 0.13)
+;
+}
+
+.text-muted-foreground {
+    color:#FF7500;
+    font-weight: 900;
+}
+
+header {
+    background: rgb(15,101,156);
+background: radial-gradient(circle, rgba(15,101,156,1) 35%, rgba(23,66,94,1) 100%);
+
+}
+
+
+body {
+  background-color: black;
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  height: 190vh;
+  margin: 0;
+  color: #d5d5d5;
+  font-size: calc(0.3 * var(--m));
+}
+
+h4 {
+  font-weight: 500;
+  font-size: calc(0.6 * var(--m));
+  margin: 0;
+}
+
+
+footer {
+  z-index: 500;
+  width: 100%;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  padding: 5rem 2vw;
+  position: relative;
+  background: rgba( 0, 0, 0, 0.3 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 11px );
+-webkit-backdrop-filter: blur( 11px );
+border-radius: 10px;
+}
+
+footer::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0) 5%,
+    rgba(0, 0, 0, 0.3) 20%,
+    rgba(0, 0, 0, 0.6) 30%,
+    rgba(0, 0, 0, 0.8) 40%,
+    rgba(0, 0, 0, 1) 50%,
+    rgb(0, 0, 0)
+  );
+  z-index: -7;
+}
+
+
+#camisinhas {
+  margin-top: 70px;
+  margin-bottom: 150px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1rem;
+
+}
+
+
+.social::after {
+    
+
+}
+
+.backdrop {
+  z-index: -5;
+  position: absolute;
+  inset: 0;
+
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(40px);
+
+  mask-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.5) 10%,
+    rgba(0, 0, 0, 0.8) 20%,
+    rgba(0, 0, 0, 1) 30%,
+    rgb(0, 0, 0)
+  );
+
+  -webkit-mask-image: linear-gradient(
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.5) 10%,
+    rgba(0, 0, 0, 0.8) 20%,
+    rgba(0, 0, 0, 1) 30%,
+    rgb(0, 0, 0)
+  );
+}
+
+.col {
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: calc(0.3 * var(--m)) calc(0.8 * var(--m));
+  width: 28%;
+}
+
+.col2,
+.col3 {
+  background-color: #121212;
+  border-radius: calc(0.5 * var(--m));
+}
+
+.social>img {
+  height: calc(0.3 * var(--m));
+  object-fit: cover;
+}
+
+.social {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.social>a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link {
+  width: calc(0.8 * var(--m));
+  height: calc(0.8 * var(--m));
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: calc(0.1 * var(--m));
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+  :root {
+    --m: 3rem;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  footer {
+    flex-direction: column;
+    padding: 5rem 20vw;
+  }
+  .col {
+    width: 100%;
+  }
+}
+
+nav {
+    position: fixed;
+    z-index: 500;
+}
+
+.nav-centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#cardzinhos {
+    margin: 100px;
+    background-color: black;
+}
+
+*:before,
+*:after{
+	box-sizing: border-box;
+}
+
+#noticias {
+    padding: 30px;
+}
+
+#noticias>h1{
+	display: table;
+	margin: 5% auto 0;
+	font-size: 2em;
+	font-weight: 400;
+	text-shadow: 0 1px white, 0 2px black;
+}
+.container{
+	margin: 4% auto;
+	width: 210px;
+	height: 140px;
+	position: relative;
+	perspective: 1000px;
+}
+#carousel{
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	transform-style: preserve-3d;
+	animation: rotation 20s infinite linear;
+}
+#carousel:hover{
+	animation-play-state: paused;
+}
+#carousel figure{
+	display: block;
+	position: absolute;
+	width: 200px;
+	height: 116px;
+	left: 10px;
+	top: 10px;
+	background: black;
+	overflow: hidden;
+	border: solid 5px black;
+}
+#carousel figure:nth-child(1){transform: rotateY(0deg) translateZ(288px);}
+#carousel figure:nth-child(2) { transform: rotateY(40deg) translateZ(288px);}
+#carousel figure:nth-child(3) { transform: rotateY(80deg) translateZ(288px);}
+#carousel figure:nth-child(4) { transform: rotateY(120deg) translateZ(288px);}
+#carousel figure:nth-child(5) { transform: rotateY(160deg) translateZ(288px);}
+#carousel figure:nth-child(6) { transform: rotateY(200deg) translateZ(288px);}
+#carousel figure:nth-child(7) { transform: rotateY(240deg) translateZ(288px);}
+#carousel figure:nth-child(8) { transform: rotateY(280deg) translateZ(288px);}
+#carousel figure:nth-child(9) { transform: rotateY(320deg) translateZ(288px);}
+
+#noticias>img{
+	-webkit-filter: grayscale(1);
+	cursor: pointer;
+	transition: all .5s ease;
+}
+#noticias>img:hover{
+	-webkit-filter: grayscale(0);
+  transform: scale(1.2,1.2);
+}
+
+@keyframes rotation{
+	from{
+		transform: rotateY(0deg);
+	}
+	to{
+		transform: rotateY(360deg);
+	}
+}
+
+.CartBtn {
+  width: 140px;
+  height: 40px;
+  border-radius: 12px;
+  border: none;
+  background-color: #0F659C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: .5s;
+  overflow: hidden;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.103);
+  position: relative;
+}
+
+.IconContainer {
+  position: absolute;
+  left: -50px;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  z-index: 2;
+  transition-duration: .5s;
+}
+
+.icon {
+  border-radius: 1px;
+}
+
+.text {
+  height: 100%;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FF7500;
+  z-index: 1;
+  transition-duration: .5s;
+  font-size: 1.04em;
+  font-weight: 600;
+}
+
+.CartBtn:hover .IconContainer {
+  transform: translateX(58px);
+  border-radius: 40px;
+
+  transition-duration: .5s;
+}
+
+.CartBtn:hover .text {
+  transform: translate(10px,0px);
+  transition-duration: .5s;
+}
+
+.CartBtn:active {
+  transform: scale(0.95);
+  transition-duration: .5s;
+}            
+
+
+		</style>
+  </head>
+  <body>
+    
+<div class="relative bg-white dark:bg-background">
+
+  <header class="flex justify-between items-center p-7">
+    <img src="img/kariluorange.png" alt="karilu" class="w-20">
+
+    <nav class="flex items-center space-x-4 p-2">
+      <a href="#" class="text-muted-foreground">Clubes</a>
+      <a href="#" class="text-muted-foreground">Esportivos</a>
+      <a href="#" class="text-muted-foreground">Corporativos</a>
+      <a href="#" class="text-muted-foreground">Escolares</a>
+      
+    </nav>
+
+    <div class="flex items-center space-x-2">
+        <div class="search-panels">
+            <div class="search-group">
+                <input required="" type="text" name="text" autocomplete="on" class="input">
+                <label class="enter-label">Buscar</label>
+                <div class="btn-box">
+                    <button class="btn-search">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path><circle id="svg-circle" cx="208" cy="208" r="144"></circle></svg>
+                    </button>
+                </div>
+                <div class="btn-box-x">
+                    <button class="btn-cleare">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" id="cleare-line"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+      <button>
+      <img src="img/heart_8848497.png" alt="heart" class="w-10 h-10">
+    </button>
+
+      <button>
+      <img src="img/picnic_16187581.png" alt="heart" class="w-8 h-8">
+    </button>
+    </div>
+
+  </header>
+
+  <div class="relative">
+    <img src="img/uniformeoperario.png" alt="Operario24" class="w-full" />
+    <div class="absolute bottom-0 left-0 text-white p-4">
+
+        <div class="textodobagui">
+            <div id="textofoda">
+                
+      <h2 class="text-3xl font-bold">OPERÁRIO-PR Temporada 2024/25</h2>
+      
+    </div>
+      <button class="btn">
+        <img src="https://upload.wikimedia.org/wikipedia/pt/a/aa/Brasao-ofec.png" class="w-6 h-6 center">
+        Veja aqui
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15px" width="15px" class="icon">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" stroke="#292D32" d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08008"></path>
+      </svg>
+    </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+
+<div id="cardzinhos">
+    <div class="flex background-color justify-between p-4">
+      <div class="max-w-xs bg-card rounded-lg overflow-hidden shadow-lg">
+        <img class="w-full h-48 object-cover" src="img/card1.jpg" alt="Football Player" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">CATEGORIAS DE BASE 🧒🏽</h3>
+          <p class="text-muted-foreground">Dê uma olhada nosso catálogo de roupas esportivas juvenis! </p> <br>
+          <a href="#" class="">ESCOLARES</a>
+        </div>
+      </div>
+  
+      <div class="max-w-xs bg-card rounded-lg overflow-hidden shadow-lg">
+        <img class="w-full h-48 object-cover" src="img/card2.jpg" alt="Lifestyle Fashion" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">DIA DOS PAIS 🎁</h3> 
+          <p class="text-muted-foreground">Se liga no catálogo especial que nós prepararamos pro seu paizão.</p> <br>
+          <a href="#" class="">PAPAIS</a>
+        </div>
+      </div>
+      <div class="max-w-xs bg-card rounded-lg overflow-hidden shadow-lg">
+        <img class="w-full h-48 object-cover" src="img/card3.png" alt="Running Gear" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">SOBRENOME: ESTILO 👕</h3>
+          <p class="text-muted-foreground">Com Karilu você terá o dobro de postura e respeito. Pode confiar.</p> <br>
+          <a href="#" class="">SOCIAIS</a>
+        </div>
+      </div>
+      <div class="max-w-xs bg-card rounded-lg overflow-hidden shadow-lg">
+        <img class="w-full h-48 object-cover" src="img/card4.png" alt="Father and Son" />
+        <div class="p-4">
+          <h3 class="text-lg font-semibold">TODOS OS ESTILOS 🧑🏽‍🍳</h3>
+          <p class="text-muted-foreground">Já pensou em olhar todas as roupas de ocupações que temos disponíveis?</p> <br>
+          <a href="#" class="">DE TRABALHO</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div class="relative">
+    <img src="img/uniformetreze.png" alt="Treze24" class="w-full" />
+    <div class="absolute bottom-0 left-0 text-white p-4">
+        
+        <div class="textodobagui">
+            <div id="textofoda">
+      <h2 class="text-3xl font-bold">TREZE-PB Temporada 2024/25</h2>
+    </div>
+      <button class="btn">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Treze_Futebol_Clube_logo.svg" class="w-6 h-6 center">
+        Veja aqui
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15px" width="15px" class="icon">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" stroke="#292D32" d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08008"></path>
+      </svg>
+    </div>
+      </button>
+    </div>
+  </div>
+
+<div id="noticias">
+    <h1>Fotos 3D da Temporada 2023/24 </h1>
+  <div class="container">
+		<div id="carousel">
+			<figure><img src="img/agua-santa-1.webp" alt=""></figure>
+			<figure><img src="img/agua-santa-2.jpeg" alt=""></figure>
+			<figure><img src="img/agua-santa-3.webp" alt=""></figure>
+			<figure><img src="img/operario-1.jpg" alt=""></figure>
+			<figure><img src="img/operario-2.avif" alt=""></figure>
+			<figure><img src="img/operario-3.jpeg" alt=""></figure>
+			<figure><img src="img/lj-1.jpg" alt=""></figure>
+			<figure><img src="img/lj-2.webp" alt=""></figure>
+			<figure><img src="img/lj-3.jpg" alt=""></figure>
+		</div>
+	</div>
+    <h2> <center> Veja mais no nosso &nbsp;<a href="https://www.instagram.com/karilulojas/">INSTAGRAM</a> </center></p>
+        <BR>
+            <br>
+            <br>
+</div>
+
+  
+
+<div class="relative">
+    <img src="img/pstc.jpg" alt="pstc24" class="w-full" />
+    <div class="absolute bottom-0 left-0 text-white p-4">
+        
+        <div class="textodobagui">
+            <div id="textofoda">
+      <h2 class="text-3xl font-bold">PSTC-PR Temporada 2024/25</h2>
+    </div>
+      <button class="btn">
+        <img src="https://www.pstc.com.br/wp-content/uploads/2020/07/Logo.png" class="w-6 h-6 center">
+        Veja aqui
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15px" width="15px" class="icon">
+      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" stroke="#292D32" d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08008"></path>
+      </svg>
+    </div>
+      </button>
+    </div>
+  </div>
+
+  <div id="camisinhas">
+    <div class="cardcompra1 w-60 h-80 p-3 flex flex-col gap-1 rounded-2xl">
+      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-1.png" class="w-full h-full object-cover"></div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold">Camisa em piquet com gola polo</span>
+            <p class="text-xs text-gray-700">ID: 1500</p>
+          </div>
+          <span class="font-bold  text-orange-600">R$119,99</span>
+        </div>
+        <button class="CartBtn">
+          <span class="IconContainer"> 
+            <img src="img/picnic_16187581.png"  class="CartIcon" />
+          </span>
+          <p class="text">Carrinho</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="cardcompra2 w-60 h-80 p-3 flex flex-col gap-1 rounded-2xl">
+      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-2.png" class="w-full h-full object-cover"></div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold">Camisa em piquet com gola polo</span>
+            <p class="text-xs text-gray-700">ID: 1500</p>
+          </div>
+          <span class="font-bold  text-orange-600">R$119,99</span>
+        </div>
+        <button class="CartBtn">
+          <span class="IconContainer"> 
+            <img src="img/picnic_16187581.png"  class="CartIcon" />
+          </span>
+          <p class="text">Carrinho</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="cardcompra3 w-60 h-80 p-3 flex flex-col gap-1 rounded-2xl">
+      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-3.png" class="w-full h-full object-cover"></div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold">Camisa em piquet com gola polo</span>
+            <p class="text-xs text-gray-700">ID: 1500</p>
+          </div>
+          <span class="font-bold  text-orange-600">R$119,99</span>
+        </div>
+        <button class="CartBtn">
+          <span class="IconContainer"> 
+            <img src="img/picnic_16187581.png"  class="CartIcon" />
+          </span>
+          <p class="text">Carrinho</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="cardcompra4 w-60 h-80 p-3 flex flex-col gap-1 rounded-2xl">
+      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-4.png" class="w-full h-full object-cover"></div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold">Camiseta em Poliviscose com faixa refletiva</span>
+            <p class="text-xs text-gray-700">ID: 1000</p>
+          </div>
+          <span class="font-bold  text-orange-600">R$159,99</span>
+        </div>
+        <button class="CartBtn">
+          <span class="IconContainer"> 
+            <img src="img/picnic_16187581.png"  class="CartIcon" />
+          </span>
+          <p class="text">Carrinho</p>
+        </button>
+      </div>
+    </div>
+
+    <div class="cardcompra5 w-60 h-80  p-3 flex flex-col gap-1 rounded-2xl">
+      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-5.png" class="w-full h-full object-cover"></div>
+      <div class="flex flex-col gap-4">
+        <div class="flex flex-row justify-between">
+          <div class="flex flex-col">
+            <span class="text-xl font-bold">Camisa em piquet com gola polo</span>
+            <p class="text-xs text-gray-700">ID: 1500</p>
+          </div>
+          <span class="font-bold  text-orange-600">R$119,99</span>
+        </div>
+        <button class="CartBtn">
+          <span class="IconContainer"> 
+            <img src="img/picnic_16187581.png"  class="CartIcon" />
+          </span>
+          <p class="text">Carrinho</p>
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+<footer id="footer">
+
+    
+    <div class="col col1">
+      <h4>Karilu Concept</h4>
+      <p>Made by Eduardo Tomaz</p>
+      <div class="social">
+        <a href="https://github.com/toomazs" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/codepen_1.png" alt="" /></a>
+        <a href="https://instagram.com/tomazdudux" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/x.png" alt="" /></a>
+        <a href="https://www.linkedin.com/in/eduardotoomazs/" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/youtube_1.png" alt="" /></a>
+      </div>
+      <p style="color: #818181; font-size: smaller"> 2024 © Todos direitos reservados</p>
+    </div>
+    <div class="col col2">
+      <p>Site Oficial</p>
+      <p>Nossa missão</p>
+      <p>Políticas de Privacidade</p>
+      <p>Termos de serviço</p>
+    </div>
+    <div class="col col3">
+      <p>Eduardo Tomaz Jobs</p>
+      <p>Contact me</p>
+      <p>Github</p>
+      <p>Linkedin</p>
+    </div>
+    <div class="backdrop"></div>
+  </footer>
+
+  </body>
+</html>
