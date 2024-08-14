@@ -3,9 +3,11 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karilu Concept</title>
+    <link rel="shortcut icon" type="image/jpg" href="img/logo_K-transformed.png"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
@@ -13,7 +15,7 @@
 		<script type="text/javascript">
 
 document.addEventListener("DOMContentLoaded", function () {
-    ScrollReveal().reveal('body img', {
+    ScrollReveal().reveal('div img', {
       distance: '50px',
       origin: 'bottom',
       opacity: 0,
@@ -23,15 +25,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-
-window.addEventListener('scroll', function() {
-    var nav = document.querySelector('nav');
-    if (window.scrollY > 50) { 
-      nav.classList.add('nav-centered');
-    } else {
-      nav.classList.remove('nav-centered');
-    }
-  });
 			window.tailwind.config = {
 				darkMode: ['class'],
 				theme: {
@@ -79,19 +72,11 @@ window.addEventListener('scroll', function() {
 		</script>
 		<style type="text/tailwindcss">
 
-@import url("https://fonts.googleapis.com/css?family=IBM%20Plex%20Sans:500|IBM%20Plex%20Sans:300");
-
 * {
-    font-family: "IBM Plex Sans", sans-serif;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
 }
 
-
-nav {
-    transition: transform 0.5s ease-in-out;
-  }
-  .nav-centered {
-    transform: translateX(50vw) translateY(85vh);
-  }
 			@layer base {
 				:root {
                     --m: 3rem;
@@ -149,170 +134,34 @@ nav {
   --width-input: 200px;
 }
 
-.search-group {
-  position: relative;
+
+
+
+
+
+
+
+
+
+
+
+/* PARTE DE CIMA DO SITE **************************************************************************************************************************/
+header {
+background-color: black;
 }
 
-.input {
-  width: var(--width-input);
-  border: solid 1.5px var(--default-color);
-  border-radius: 80px;
-  background: none;
-  padding: 1rem;
-  padding-right: 3rem;
-  font-size: 1rem;
-  color: var(--color-active-input);
-  transition: border var(--transition);
+.flex {
+  text-align: center;
 }
-
-.enter-label {
-  position: absolute;
-  left: 15px;
-  color: var(--default-color);
-  pointer-events: none;
-  transform: translateY(1rem);
-  transition: var(--transition);
-}
-
-.enter-label {
-  color: var(--default-color);
-  pointer-events: none;
-}
-
-.input:focus, input:valid {
-  outline: none;
-  border: 1.5px solid var(--color-active);
-}
-
-.input:focus ~ label, input:valid ~ label {
-  transform: translateY(-50%) scale(0.8);
-  background-color: var(--color-active);
-  border-radius: 20px;
-  padding: .2em .6em;
-  color: var(--color-text);
-}
-
-.btn-box {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: -1em;
-  right: 80%;
-  border-radius: 100%;
-  transition: 300ms cubic-bezier(0.4,0,0.2,1);
-  transition-delay: 100ms;
-  opacity: 0;
-}
-
-.input:focus ~ .btn-box, input:valid ~ .btn-box {
-  right: 10%;
-  opacity: 1;
-  transition-delay: 0s;
-  transition: var(--transition);
-}
-
-.input:not(:focus) ~ .btn-box, input:not(:valid) ~ .btn-box {
-  transition-property: right, opacity;
-  transition-delay: 300ms;
-}
-
-.input:focus ~ .btn-box:hover, input:valid ~ .btn-box:hover {
-  transform: scale(1.2);
-}
-
-.input:focus ~ .btn-box:hover:active, input:valid ~ .btn-box:hover:active {
-  transform: scale(1);
-}
-
-.btn-search {
-  position: relative;
-  cursor: pointer;
-  background-color: var(--color-active);
-  width: 2em;
-  height: 2em;
-  top: 2.5px;
-  border: none;
-  border-radius: 100%;
-  padding: 0;
-  transition: var(--transition);
-}
-
-.btn-search:active {
-  transform: scale(1);
-}
-
-.btn-search svg {
-  position: absolute;
-  top: 25%;
-  left: 25%;
-  fill: var(--color-text);
-  width: 12px;
-  height: 12px;
-}
-
-#svg-circle {
-  fill: var(--color-text);
-  transition: var(--transition);
-}
-
-.input:focus ~ .btn-box:hover #svg-circle, input:valid ~ .btn-box:hover #svg-circle {
-  fill: transparent;
-}
-
-.btn-box-x {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: absolute;
-  top: 1em;
-  right: 7%;
-  opacity: 0;
-  transform: rotate(-90deg) scale(.1);
-  transition: var(--transition);
-}
-
-.input:focus ~ .btn-box-x, input:valid ~ .btn-box-x {
-  opacity: 1;
-  transform: rotate(0) scale(1);
-}
-
-.btn-cleare {
-  position: relative;
-  cursor: pointer;
-  background-color: transparent;
-  width: 2em;
-  height: 2em;
-  border: none;
-  border-radius: 100%;
-  padding: 0;
-  transition: var(--transition);
-}
-
-.btn-cleare svg {
-  width: 15px;
-  height: 15px;
-}
-
-#cleare-line {
-  fill: var(--default-color);
-}
-
-
-
-
-
-a {
-  position: relative;
-  padding: 10px 20px;
-  border-radius: 7px;
-  border: 1px solid #0F659C;
-  font-size: 14px;
+/* NAVBAR */
+.flex>a {
   text-transform: uppercase;
-  font-weight: 600;
-  letter-spacing: 2px;
+  position: relative;
+  padding: 8px 20px;
+  border-radius: 7px;
+  font-size: 20px;
+  letter-spacing: 1px;
   background: transparent;
-  color: #ff7500;
   overflow: hidden;
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: all 0.2s ease-in;
@@ -320,21 +169,21 @@ a {
   transition: all 0.2s ease-in;
 }
 
-a:hover {
-  background: #0F659C;
-  box-shadow: 0 0 30px 5px #0F659C;
+.flex>a:hover {
+  background: #000000;
+  box-shadow: 0 0 30px 5px #fff;
   -webkit-transition: all 0.2s ease-out;
   -moz-transition: all 0.2s ease-out;
   transition: all 0.2s ease-out;
 }
 
-a:hover::before {
+.flex>a:hover::before {
   -webkit-animation: sh02 0.5s 0s linear;
   -moz-animation: sh02 0.5s 0s linear;
   animation: sh02 0.5s 0s linear;
 }
 
-a::before {
+.flex>a::before {
   content: '';
   display: block;
   width: 0px;
@@ -343,8 +192,8 @@ a::before {
   top: 7%;
   left: 0%;
   opacity: 0;
-  background: #f1aa6c;
-  box-shadow: 0 0 50px 30px #f1aa6c;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
   -webkit-transform: skewX(-20deg);
   -moz-transform: skewX(-20deg);
   -ms-transform: skewX(-20deg);
@@ -368,16 +217,113 @@ a::before {
   }
 }
 
-a:active {
+.flex>a:active {
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: box-shadow 0.2s ease-in;
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
 
+.text-muted-foreground {
+    color:#fff;
+    font-weight: 500;
+}
 
-.btn-box-x:hover #cleare-line {
-  fill: var(--color-active);
+/* BARRA DE PESQUISA */
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  position: relative;
+}
+
+.input {
+  border-style: none;
+  height: 50px;
+  width: 50px;
+  padding: 10px;
+  outline: none;
+  border-radius: 50%;
+  transition: .5s ease-in-out;
+  background-color: #000000;
+  box-shadow: 0px 0px 3px #f3f3f3;
+  padding-right: 40px;
+  color: #fff;
+}
+
+.input::placeholder,
+.input {
+  font-size: 17px;
+}
+
+.input::placeholder {
+  color: #8f8f8f;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  right: 0px;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  outline: none;
+  border-style: none;
+  border-radius: 50%;
+  pointer-events: painted;
+  background-color: transparent;
+  transition: .2s linear;
+}
+
+.icon:focus ~ .input,
+.input:focus {
+  box-shadow: none;
+  width: 250px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 3px solid #fff;
+  transition: all 500ms cubic-bezier(0, 0.110, 0.35, 2);
+}
+
+
+
+
+
+/* CONTEUDO DO SITE *********************************************************************************************************************************************/
+      
+/* QUADRADO AZUL NA PARTE DE BAIXO DAS FOTOS PRINCIPAIS */
+
+.relative {
+  background-color: black;
+}
+
+.relative>img {
+  margin: auto;
+  width: 70%;
+  border-radius: 30px;
+}
+.textodobagui {
+    padding: 20px;
+    margin: 30px;
+    background: rgba( 15, 101, 156, 0.3 );
+    box-shadow:
+  0px 3px 2.2px rgba(0, 0, 0, 0.045),
+  0px 7.1px 5.3px rgba(0, 0, 0, 0.065),
+  0px 13.4px 10px rgba(0, 0, 0, 0.08),
+  0px 23.9px 17.9px rgba(0, 0, 0, 0.095),
+  0px 44.7px 33.4px rgba(0, 0, 0, 0.115),
+  0px 107px 80px rgba(0, 0, 0, 0.16);
+    backdrop-filter: blur( 11px );
+    -webkit-backdrop-filter: blur( 11px );
+    border-radius: 10px;
+}
+
+h2#textofoda {
+    text-align:center;
+    padding: 10px;
 }
 
 .btn {
@@ -439,73 +385,19 @@ a:active {
   50% {
     transform: translateX(30%);
   }
-
-  
 }
 
 
-      
-.textodobagui {
-    padding: 20px;
-    margin: 30px;
-    background: rgba( 15, 101, 156, 0.3 );
-    box-shadow:
-  0px 3px 2.2px rgba(0, 0, 0, 0.045),
-  0px 7.1px 5.3px rgba(0, 0, 0, 0.065),
-  0px 13.4px 10px rgba(0, 0, 0, 0.08),
-  0px 23.9px 17.9px rgba(0, 0, 0, 0.095),
-  0px 44.7px 33.4px rgba(0, 0, 0, 0.115),
-  0px 107px 80px rgba(0, 0, 0, 0.16)
-;
-    backdrop-filter: blur( 11px );
-    -webkit-backdrop-filter: blur( 11px );
-    border-radius: 10px;
-}
 
-.flex>img {
-padding: -20px;
-}
 
-h2#textofoda {
-    text-align:center;
-    padding: 10px;
-}
 
-.flex>a {
-    color:#FF7500;
-    font-weight: 900;
-    background: rgb(15,101,156);
-    background: radial-gradient(circle, rgba(15,101,156,1) 35%, rgba(35,95,134,1) 100%);
-    margin-left: 130px;
-    box-shadow:
-  0px 0px 2.2px rgba(0, 0, 0, 0.037),
-  0px 0px 5.3px rgba(0, 0, 0, 0.053),
-  0px 0px 10px rgba(0, 0, 0, 0.065),
-  0px 0px 17.9px rgba(0, 0, 0, 0.077),
-  0px 0px 33.4px rgba(0, 0, 0, 0.093),
-  0px 0px 80px rgba(0, 0, 0, 0.13)
-;
-}
-
-.text-muted-foreground {
-    color:#FF7500;
-    font-weight: 900;
-}
-
-header {
-    background: rgb(15,101,156);
-background: radial-gradient(circle, rgba(15,101,156,1) 35%, rgba(23,66,94,1) 100%);
-
-}
 
 
 body {
   background-color: black;
   color: white;
-
   display: flex;
   flex-direction: column;
-
   height: 190vh;
   margin: 0;
   color: #d5d5d5;
@@ -563,11 +455,6 @@ footer::before {
 
 }
 
-
-.social::after {
-    
-
-}
 
 .backdrop {
   z-index: -5;
@@ -652,17 +539,6 @@ footer::before {
   }
 }
 
-nav {
-    position: fixed;
-    z-index: 500;
-}
-
-.nav-centered {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 #cardzinhos {
     margin: 100px;
     background-color: black;
@@ -684,6 +560,11 @@ nav {
 	font-weight: 400;
 	text-shadow: 0 1px white, 0 2px black;
 }
+
+#noticias>h3{
+	text-align: center;
+}
+
 .container{
 	margin: 4% auto;
 	width: 210px;
@@ -806,52 +687,82 @@ nav {
   transition-duration: .5s;
 }            
 
+.p-4 {
+  text-align: center;
+}
+
+.p-4>button {
+  padding: 1.3em 3em;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #ffffff;
+  background-color: #000000;
+  border: none;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  margin: 0 auto;
+}
+
+.p-4>button:hover {
+  background-color: #ffffff;
+  box-shadow: 0px 15px 20px rgba(122, 122, 122, 0.4);
+  color: #000000;
+  transform: translateY(-7px);
+}
+
+..p-4>button:active {
+  transform: translateY(-1px);
+}
 
 		</style>
   </head>
   <body>
     
+
+<!--  HEADER DO SITE -->
 <div class="relative bg-white dark:bg-background">
 
   <header class="flex justify-between items-center p-7">
-    <img src="img/kariluorange.png" alt="karilu" class="w-20">
-
+    <span>
+    <a href="index.html"><img src="img/Karilu.png" alt="karilu" class="w-20"></a>
+    </span>
     <nav class="flex items-center space-x-4 p-2">
-      <a href="#" class="text-muted-foreground">Clubes</a>
-      <a href="#" class="text-muted-foreground">Esportivos</a>
-      <a href="#" class="text-muted-foreground">Corporativos</a>
-      <a href="#" class="text-muted-foreground">Escolares</a>
-      
+      <a href="compras/clubes.html" class="text-muted-foreground">Clubes</a>
+      <a href="compras/esportivos.html" class="text-muted-foreground">Esportivos</a>
+      <a href="compras/corporativos.html" class="text-muted-foreground">Corporativos</a>
+      <a href="compras/sociais.html" class="text-muted-foreground">Sociais</a>
+      <a href="compras/escolares.html" class="text-muted-foreground">Escolares</a>
     </nav>
 
     <div class="flex items-center space-x-2">
-        <div class="search-panels">
-            <div class="search-group">
-                <input required="" type="text" name="text" autocomplete="on" class="input">
-                <label class="enter-label">Buscar</label>
-                <div class="btn-box">
-                    <button class="btn-search">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path><circle id="svg-circle" cx="208" cy="208" r="144"></circle></svg>
-                    </button>
-                </div>
-                <div class="btn-box-x">
-                    <button class="btn-cleare">
-                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z" id="cleare-line"></path></svg>
-                    </button>
-                </div>
-            </div>
-        </div>
-      <button>
-      <img src="img/heart_8848497.png" alt="heart" class="w-10 h-10">
-    </button>
+      <div class="input-wrapper">
+        <button class="icon"> 
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="25px" width="25px">
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z"></path>
+            <path stroke-linejoin="round" stroke-linecap="round" stroke-width="1.5" stroke="#fff" d="M22 22L20 20"></path>
+          </svg>
+        </button>
+        <input placeholder="pesquise algo.." class="input" name="text" type="text">
+      </div>
 
       <button>
-      <img src="img/picnic_16187581.png" alt="heart" class="w-8 h-8">
+        <img src="img/shopping-cart.png" alt="cart" class="w-8 h-8">
     </button>
     </div>
 
   </header>
+<!--- FIM DA HEADER -->
 
+
+
+
+
+<!-- CONTEUDO DO SITE -->
   <div class="relative">
     <img src="img/uniformeoperario.png" alt="Operario24" class="w-full" />
     <div class="absolute bottom-0 left-0 text-white p-4">
@@ -862,17 +773,17 @@ nav {
       <h2 class="text-3xl font-bold">OPERÁRIO-PR Temporada 2024/25</h2>
       
     </div>
+    <a href="times/operario.html">
       <button class="btn">
         <img src="https://upload.wikimedia.org/wikipedia/pt/a/aa/Brasao-ofec.png" class="w-6 h-6 center">
         Veja aqui
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15px" width="15px" class="icon">
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" stroke="#292D32" d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08008"></path>
-      </svg>
-    </div>
       </button>
+    </a>
+    </div>
     </div>
   </div>
 </div>
+
 
 
 <div id="cardzinhos">
@@ -880,38 +791,43 @@ nav {
       <div class="max-w-xs bg-card rounded-lg overflow-hidden shadow-lg">
         <img class="w-full h-48 object-cover" src="img/card1.jpg" alt="Football Player" />
         <div class="p-4">
-          <h3 class="text-lg font-semibold">CATEGORIAS DE BASE 🧒🏽</h3>
-          <p class="text-muted-foreground">Dê uma olhada nosso catálogo de roupas esportivas juvenis! </p> <br>
-          <a href="#" class="">ESCOLARES</a>
+          <h3 class="text-lg font-semibold"><center>CATEGORIAS DE BASE 🧒🏽</center></h3> <br>
+          <p class="text-muted-foreground"><center>Dê uma olhada nosso catálogo de roupas esportivas juvenis!</center></p> <br>
+          <button> <a href="compras/escolares.html">ESCOLARES</a>
+          </button>
         </div>
       </div>
-  
       <div class="max-w-xs bg-card rounded-lg overflow-hidden shadow-lg">
         <img class="w-full h-48 object-cover" src="img/card2.jpg" alt="Lifestyle Fashion" />
         <div class="p-4">
-          <h3 class="text-lg font-semibold">DIA DOS PAIS 🎁</h3> 
-          <p class="text-muted-foreground">Se liga no catálogo especial que nós prepararamos pro seu paizão.</p> <br>
-          <a href="#" class="">PAPAIS</a>
+          <h3 class="text-lg font-semibold"><center>DIA DOS PAIS 🎁</center></h3> <br>
+          <p class="text-muted-foreground"><center>Se liga no catálogo especial que nós prepararamos pro seu paizão.</center></p> <br>
+          <button> <a href="compras/esportivos.html">PAPAIS</a>
+          </button>
         </div>
       </div>
       <div class="max-w-xs bg-card rounded-lg overflow-hidden shadow-lg">
         <img class="w-full h-48 object-cover" src="img/card3.png" alt="Running Gear" />
         <div class="p-4">
-          <h3 class="text-lg font-semibold">SOBRENOME: ESTILO 👕</h3>
-          <p class="text-muted-foreground">Com Karilu você terá o dobro de postura e respeito. Pode confiar.</p> <br>
-          <a href="#" class="">SOCIAIS</a>
+          <h3 class="text-lg font-semibold"><center>SOBRENOME: ESTILO 👕</center></h3> <br>
+          <p class="text-muted-foreground"><center>Com Karilu você terá o dobro de postura e respeito. Pode confiar.</center></p> <br>
+          <button> <a href="compras/sociais.html">SOCIAIS</a>
+          </button>
         </div>
       </div>
       <div class="max-w-xs bg-card rounded-lg overflow-hidden shadow-lg">
         <img class="w-full h-48 object-cover" src="img/card4.png" alt="Father and Son" />
         <div class="p-4">
-          <h3 class="text-lg font-semibold">TODOS OS ESTILOS 🧑🏽‍🍳</h3>
-          <p class="text-muted-foreground">Já pensou em olhar todas as roupas de ocupações que temos disponíveis?</p> <br>
-          <a href="#" class="">DE TRABALHO</a>
+          <h3 class="text-lg font-semibold"><center>TODOS OS ESTILOS 🧑🏽‍🍳</center></h3> <br>
+          <p class="text-muted-foreground"><center>Já pensou em olhar todas as roupas de ocupações que temos disponíveis?</center></p> <br>
+          <button> <a href="compras/corporativos.html">CORPORATIVOS</a>
+          </button>
         </div>
       </div>
     </div>
   </div>
+
+
 
 <div class="relative">
     <img src="img/uniformetreze.png" alt="Treze24" class="w-full" />
@@ -921,19 +837,21 @@ nav {
             <div id="textofoda">
       <h2 class="text-3xl font-bold">TREZE-PB Temporada 2024/25</h2>
     </div>
+    <a href="times/treze.html">
       <button class="btn">
         <img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Treze_Futebol_Clube_logo.svg" class="w-6 h-6 center">
         Veja aqui
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15px" width="15px" class="icon">
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" stroke="#292D32" d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08008"></path>
-      </svg>
-    </div>
       </button>
+    </a>
+    </div>
     </div>
   </div>
 
+
+
 <div id="noticias">
-    <h1>Fotos 3D da Temporada 2023/24 </h1>
+    <h1>Museu 3D</h1>
+    <h3>Temporada 23/24</h3>
   <div class="container">
 		<div id="carousel">
 			<figure><img src="img/agua-santa-1.webp" alt=""></figure>
@@ -947,13 +865,18 @@ nav {
 			<figure><img src="img/lj-3.jpg" alt=""></figure>
 		</div>
 	</div>
-    <h2> <center> Veja mais no nosso &nbsp;<a href="https://www.instagram.com/karilulojas/">INSTAGRAM</a> </center></p>
-        <BR>
+    <h2>
+    <center> 
+      <a href="https://www.instagram.com/karilulojas/">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_kplcYfrmdwZZYC0dXgcjWf4xi-4sKMFVDfzA-h-GL5hCA1cDm43v_XIPOoNjboOkgA&usqp=CAU" class="w-30 h-12"> <br>
+      </a>
+    </center>
+            <br>
             <br>
             <br>
 </div>
 
-  
+
 
 <div class="relative">
     <img src="img/pstc.jpg" alt="pstc24" class="w-full" />
@@ -963,142 +886,96 @@ nav {
             <div id="textofoda">
       <h2 class="text-3xl font-bold">PSTC-PR Temporada 2024/25</h2>
     </div>
+    <a href="times/pstc.html">
       <button class="btn">
         <img src="https://www.pstc.com.br/wp-content/uploads/2020/07/Logo.png" class="w-6 h-6 center">
-        Veja aqui
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" height="15px" width="15px" class="icon">
-      <path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="10" stroke-width="1.5" stroke="#292D32" d="M8.91016 19.9201L15.4302 13.4001C16.2002 12.6301 16.2002 11.3701 15.4302 10.6001L8.91016 4.08008"></path>
-      </svg>
-    </div>
+         Veja aqui
       </button>
+    </a>
+    </div>
     </div>
   </div>
 
-  <div id="camisinhas">
-    <div class="cardcompra1 w-60 h-80 p-3 flex flex-col gap-1 rounded-2xl">
-      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-1.png" class="w-full h-full object-cover"></div>
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-row justify-between">
-          <div class="flex flex-col">
-            <span class="text-xl font-bold">Camisa em piquet com gola polo</span>
-            <p class="text-xs text-gray-700">ID: 1500</p>
-          </div>
-          <span class="font-bold  text-orange-600">R$119,99</span>
-        </div>
-        <button class="CartBtn">
-          <span class="IconContainer"> 
-            <img src="img/picnic_16187581.png"  class="CartIcon" />
-          </span>
-          <p class="text">Carrinho</p>
-        </button>
-      </div>
-    </div>
+  <br>
+  <br>
+  <br>
 
-    <div class="cardcompra2 w-60 h-80 p-3 flex flex-col gap-1 rounded-2xl">
-      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-2.png" class="w-full h-full object-cover"></div>
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-row justify-between">
-          <div class="flex flex-col">
-            <span class="text-xl font-bold">Camisa em piquet com gola polo</span>
-            <p class="text-xs text-gray-700">ID: 1500</p>
-          </div>
-          <span class="font-bold  text-orange-600">R$119,99</span>
-        </div>
-        <button class="CartBtn">
-          <span class="IconContainer"> 
-            <img src="img/picnic_16187581.png"  class="CartIcon" />
-          </span>
-          <p class="text">Carrinho</p>
-        </button>
-      </div>
-    </div>
 
-    <div class="cardcompra3 w-60 h-80 p-3 flex flex-col gap-1 rounded-2xl">
-      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-3.png" class="w-full h-full object-cover"></div>
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-row justify-between">
-          <div class="flex flex-col">
-            <span class="text-xl font-bold">Camisa em piquet com gola polo</span>
-            <p class="text-xs text-gray-700">ID: 1500</p>
-          </div>
-          <span class="font-bold  text-orange-600">R$119,99</span>
-        </div>
-        <button class="CartBtn">
-          <span class="IconContainer"> 
-            <img src="img/picnic_16187581.png"  class="CartIcon" />
-          </span>
-          <p class="text">Carrinho</p>
-        </button>
-      </div>
+  <div class="flex flex-col items-center border-primary p-4 rounded-lg">
+    <h2 class="text-lg font-semibold text-muted-foreground mb-4">Encontre seu time</h2>
+    <div class="flex space-x-4">
+      <a href="times/operario.html">
+        <img aria-hidden="true" alt="operario" src="https://upload.wikimedia.org/wikipedia/pt/1/16/Oper%C3%A1rioFerrovi%C3%A1rioEC%282018%29.png" class="w-18 h-20"/>
+      </a>
+      <a href="times/treze.html">
+        <img aria-hidden="true" alt="treze" src="https://upload.wikimedia.org/wikipedia/commons/0/04/Treze_Futebol_Clube_logo.svg" class="w-20 h-20"/>
+      </a>
+      <a href="times/agua-santa.html">
+      <img aria-hidden="true" alt="agua-santa" src="https://upload.wikimedia.org/wikipedia/pt/b/b8/Ecaguasanta.png" class="w-20 h-20"/>
+    </a>
+    <a href="times/londrina.html">
+      <img aria-hidden="true" alt="londrina" src="https://upload.wikimedia.org/wikipedia/pt/8/83/LondrinaEC.png"class="w-18 h-20" />
+    </a>
+    <a href="times/portuguesal.html">
+      <img aria-hidden="true" alt="portuguesal" src="img/londrinal.png"class="w-20 h-20" /> 
+    </a>
+    <a href="times/lj.html">
+      <img aria-hidden="true" alt="lj" src="https://upload.wikimedia.org/wikipedia/pt/d/dd/EC_Laranja.png" class="w-18 h-20"/>
+    </a>
+    <a href="times/linense.html">
+      <img aria-hidden="true" alt="linense" src="https://upload.wikimedia.org/wikipedia/pt/8/8b/Linense-logo.png" class="w-20 h-20"/>
+    </a>
+    <a href="times/pstc.html">
+      <img aria-hidden="true" alt="pstc" src="https://upload.wikimedia.org/wikipedia/pt/f/f9/Paran%C3%A1_Soccer_Technical_Center.png" class="w-20 h-20" />
+    </a>
     </div>
+  </div>
+  <BR>
+  <BR>
+  <BR>
 
-    <div class="cardcompra4 w-60 h-80 p-3 flex flex-col gap-1 rounded-2xl">
-      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-4.png" class="w-full h-full object-cover"></div>
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-row justify-between">
-          <div class="flex flex-col">
-            <span class="text-xl font-bold">Camiseta em Poliviscose com faixa refletiva</span>
-            <p class="text-xs text-gray-700">ID: 1000</p>
-          </div>
-          <span class="font-bold  text-orange-600">R$159,99</span>
-        </div>
-        <button class="CartBtn">
-          <span class="IconContainer"> 
-            <img src="img/picnic_16187581.png"  class="CartIcon" />
-          </span>
-          <p class="text">Carrinho</p>
-        </button>
-      </div>
-    </div>
-
-    <div class="cardcompra5 w-60 h-80  p-3 flex flex-col gap-1 rounded-2xl">
-      <div class="h-48 bg-gray-700 rounded-xl"> <img src="img/camisa-5.png" class="w-full h-full object-cover"></div>
-      <div class="flex flex-col gap-4">
-        <div class="flex flex-row justify-between">
-          <div class="flex flex-col">
-            <span class="text-xl font-bold">Camisa em piquet com gola polo</span>
-            <p class="text-xs text-gray-700">ID: 1500</p>
-          </div>
-          <span class="font-bold  text-orange-600">R$119,99</span>
-        </div>
-        <button class="CartBtn">
-          <span class="IconContainer"> 
-            <img src="img/picnic_16187581.png"  class="CartIcon" />
-          </span>
-          <p class="text">Carrinho</p>
-        </button>
-      </div>
-    </div>
+  <div id="beforefooter">
+    <img src="img/shop-info.jpg">
 
   </div>
 
+
+
+
+
+<!--  FINAL DO CONTEUDO DO SITE-->
+
+
+
+
+ <!-- FOOTER -->
 <footer id="footer">
-
-    
     <div class="col col1">
       <h4>Karilu Concept</h4>
       <p>Made by Eduardo Tomaz</p>
       <div class="social">
-        <a href="https://github.com/toomazs" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/codepen_1.png" alt="" /></a>
-        <a href="https://instagram.com/tomazdudux" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/x.png" alt="" /></a>
-        <a href="https://www.linkedin.com/in/eduardotoomazs/" target="_blank" class="link"><img src="https://assets.codepen.io/9051928/youtube_1.png" alt="" /></a>
+        <a href="https://instagram.com/tomazdudux" target="_blank" class="link"><img src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/instagram-white-icon.png" alt="" /></a>
+        <a href="https://github.com/toomazs" target="_blank" class="link"><img src="https://img.icons8.com/fluent-systems-filled/200/FFFFFF/github.png" alt="" /></a>
+        <a href="https://www.linkedin.com/in/eduardotoomazs/" target="_blank" class="link"><img src="https://img.icons8.com/ios_filled/200/FFFFFF/linkedin.png" alt="" /></a>
       </div>
       <p style="color: #818181; font-size: smaller"> 2024 © Todos direitos reservados</p>
     </div>
     <div class="col col2">
-      <p>Site Oficial</p>
-      <p>Nossa missão</p>
-      <p>Políticas de Privacidade</p>
-      <p>Termos de serviço</p>
+      <p><a href="https://www.karilu.com.br/">Site Oficial</a></p>
+      <p><a href="https://www.karilu.com.br/troca-devolucao/">Troca e devolução</a></p>
+      <p><a href="https://www.karilu.com.br/politica-de-privacidade/">Políticas de Privacidade</a></p>
+      <p><a href="https://www.karilu.com.br/fale-conosco/">Fale conosco</a></p>
     </div>
     <div class="col col3">
-      <p>Eduardo Tomaz Jobs</p>
-      <p>Contact me</p>
-      <p>Github</p>
-      <p>Linkedin</p>
+      <p><a href="https://bio.site/toomazs">Eduardo Tomaz</a></p>
+      <p><a href="https://wa.me/11937043911">WhatsApp</a></p>
+      <p><a href="https://github.com/toomazs">GitHub</a></p>
+      <p><a href="https://www.linkedin.com/in/eduardotoomazs/">Linkedin</a></p>
     </div>
     <div class="backdrop"></div>
   </footer>
+<!-- FINAL DO FOOTER-->
+
 
   </body>
 </html>
