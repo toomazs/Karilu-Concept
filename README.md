@@ -8,4 +8,4 @@
 
 📃 • Foi usado Internal Stylesheet Tailwind CSS, ScrollReveal e jQuery.
 
-Acesse: <a href="https://karilu-concept.vercel.app/#"><em><b>KARILU CONCEPT</b>em></a>
+Acesse: <a href="https://karilu-concept.vercel.app/#"><em><b>KARILU CONCEPT</b></em></a>
