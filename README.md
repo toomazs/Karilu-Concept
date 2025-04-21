@@ -1,11 +1,11 @@
+### karilu concept 💫
 
-### Karilu Concept 💫
-👕 • Gostaria de compartilhar o trabalho realizado na reformulação da marca esportiva <em><b>KARILU</b></em>. O projeto teve início com a reestruturação da estética e da paleta de cores da logomarca, com o objetivo de modernizar a identidade visual e alinhar a marca com as tendências atuais do mercado esportivo. <br>
+👕 • wanted to share a project i worked on: the redesign of the sports brand <em><b>karilu</b></em>. it started with a full rework of the logo’s aesthetics and color palette to give it a fresh, modern look that fits today’s sports market vibes.  
 
-👨🏽‍💻 • Além disso, desenvolvi um site oficial para a <em><b>KARILU</b></em>, utilizando HTML, CSS e JavaScript Internos. O novo site foi pensado para proporcionar uma navegação intuitiva, com um design funcional e moderno, garantindo esteticamente uma melhor experiência ao usuário. <br>
+👨🏽‍💻 • i also built a new official website for <em><b>karilu</b></em> using pure html, css, and internal javascript. the site was designed to be intuitive, clean, and modern — focusing on giving users a smooth and aesthetic browsing experience.  
 
-🌟 • Essa reformulação tem como intuito fortalecer a presença digital da marca e ampliar o seu alcance, permitindo que os valores e os produtos da <em><b>KARILU</em></b> sejam apresentados de maneira ainda mais atrativa e eficaz ao público. <br>
+🌟 • the goal of this redesign is to boost karilu’s digital presence and expand its reach, showcasing the brand’s values and products in a more engaging and effective way.  
 
-📃 • Foi usado Internal Stylesheet Tailwind CSS, ScrollReveal e jQuery.
+📃 • built with internal stylesheet tailwind css, scrollreveal, and jquery.  
 
-Acesse: <a href="https://karilu-concept.vercel.app/#"><em><b>KARILU CONCEPT</b></em></a>
+check it out: <a href="https://karilu-concept.vercel.app/#"><em><b>karilu concept</b></em></a>
