@@ -1,11 +1,11 @@
-### karilu concept 💫
+### Karilu Rebranding 💫
 
-👕 • wanted to share a project i worked on: the redesign of the sports brand <em><b>karilu</b></em>. it started with a full rework of the logo’s aesthetics and color palette to give it a fresh, modern look that fits today’s sports market vibes.  
+Trabalho realizado em um total de 6 dias para o rebranding da marca esportiva Karilu. O projeto começou com a reestruturação estética do logotipo e da paleta de cores, com o objetivo de modernizar a identidade visual e alinhar a marca às tendências atuais do mercado esportivo.
 
-👨🏽‍💻 • i also built a new official website for <em><b>karilu</b></em> using pure html, css, and internal javascript. the site was designed to be intuitive, clean, and modern — focusing on giving users a smooth and aesthetic browsing experience.  
+Foi desenvolvido um site utilizando Tailwind CSS e bibliotecas como jQuery e Scroll Reveal, projetado para oferecer uma navegação intuitiva com um design funcional e moderno, garantindo uma melhor experiência estética ao usuário.
 
-🌟 • the goal of this redesign is to boost karilu’s digital presence and expand its reach, showcasing the brand’s values and products in a more engaging and effective way.  
+Esse rebranding tem como objetivo fortalecer a presença digital da marca e expandir seu alcance, permitindo que os valores e produtos da Karilu sejam apresentados de forma ainda mais atraente e eficaz ao público.
 
-📃 • built with internal stylesheet tailwind css, scrollreveal, and jquery.  
+Web design · JQuery · HTML5, CSS3 & JavaScript · UX/UI · Tailwind CSS · Scroll Reveal
 
-check it out: <a href="https://karilu-concept.vercel.app/#"><em><b>karilu concept</b></em></a>
+Veja o site aqui: <a href="https://karilu-concept.vercel.app/#"><em><b>Karilu Concept</b></em></a>
